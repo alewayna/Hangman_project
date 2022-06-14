@@ -4,7 +4,7 @@
 #PASO 3: Condicionar el loop para que se detenga:
 ##          cuando ya adivinó la palabra
 ##          cuando pasaron 5 intentos 
-#PASO $: Buscar la letra en una palabra
+#PASO 4: Buscar la letra en una palabra
 
 def pedir_letra():
     letra = input("Adivina la letra: ")
@@ -12,9 +12,16 @@ def pedir_letra():
 
 maximo_cantidad_de_intentos     = 5
 cantidad_de_intentos_actuales   = 0
-esta_el_juego_terminado         = False
+seguir_el_juego                 = True
+palabra                         = "dinosaurio"
+letra_a_buscar                  = ''
+
+while cantidad_de_intentos_actuales < maximo_cantidad_de_intentos and seguir_el_juego:
+    letra_a_buscar = pedir_letra()
+    print(letra_a_buscar in palabra)
+
+        
 
 
-while cantidad_de_intentos_actuales < maximo_cantidad_de_intentos and not esta_el_juego_terminado:
-    print(pedir_letra())
     cantidad_de_intentos_actuales += 1
+    
