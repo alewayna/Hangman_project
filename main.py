@@ -20,6 +20,8 @@ cantidad_de_intentos_actuales   = 0
 seguir_el_juego                 = True
 palabra                         = "dinosaurio"
 letra_a_buscar                  = ''
+lista_de_letras_correctas       = []
+lista_de_letras_incorrectas     = []
 
 
 
