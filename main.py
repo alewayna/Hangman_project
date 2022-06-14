@@ -11,7 +11,8 @@ def pedir_letra():
     return letra
 
 
-intentos = 0
-while intentos < 5:
+cantidad_de_intentos = 0
+juego_terminado = False
+while cantidad_de_intentos < 5 and not juego_terminado:
     print(pedir_letra())
-    intentos += 1
+    cantidad_de_intentos += 1
