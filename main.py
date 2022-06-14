@@ -5,3 +5,6 @@ def pedir_letra():
     return letra
 
 print(pedir_letra())
+
+
+#PASO 2: Crear un loop para pedir letras al usuario
