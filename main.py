@@ -4,7 +4,7 @@
 #PASO 3: Condicionar el loop para que se detenga:
 ##          cuando ya adivinó la palabra
 ##          cuando pasaron 5 intentos 
-
+#PASO $: Buscar la letra en una palabra
 
 def pedir_letra():
     letra = input("Adivina la letra: ")
