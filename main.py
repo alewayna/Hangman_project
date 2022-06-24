@@ -23,9 +23,7 @@ def pedir_letra():
     letra = input("Adivina la letra: ")
     return letra
 
-def mostrar_espacios():
-    palabra = "dinosaurio"
-    tamano = len(palabra)
+def mostrar_espacios(palabra):
     incognito = ""
     for l in palabra:
         incognito += "_ "
@@ -47,7 +45,7 @@ lista_de_letras_incorrectas     = []
 while cantidad_de_intentos_actuales < maximo_cantidad_de_intentos and seguir_el_juego:
     letra_a_buscar = pedir_letra()
     print(letra_a_buscar in palabra)
-    mostrar_espacios()
+    mostrar_espacios(palabra)
 
 
     
