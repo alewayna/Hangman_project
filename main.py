@@ -12,8 +12,7 @@
 ##          ejemplo: mostrar_espacios("daniel") entonces arrojará  _ _ _ _ _ _
 #PASO 7:  Crear la variable "lista_de_letras_introducidas_por_el_usuario"
 ##        Crear la funcion "guardar_letra(letra)", esta funcion deberá almacenar en la variable nueva la letra que se le pase por parametro
-#PASO 8:  Crear la funcion "guardar_letra_correcta(letra)", esta funcion deberá almacenar en la lista "lista_de_letras_correctas" la letra que se le pase por parametro
-##        Crear la funcion "guardar_letra_incorrecta(letra)", esta funcion deberá almacenar en la lista "lista_de_letras_incorrectas" la letra que se le pase por parametro
+#PASO 8:  Modificar la funcion mostrar_espacios para que sustituya los espacios por la letra correcta
 #PASO 9:  Agregar en el "proceso principal" las funciones:
 #           guardar_letra, guardar_letra_correcta y guardar_letra_incorrecta       
 #PASO 10: En cada iteracion, imprimir en pantalla las letras incorrectas.
