@@ -50,20 +50,20 @@ def guardar_letra(letra_a_guardar):
     
 
 #Variables
-maximo_cantidad_de_intentos     = 5
-cantidad_de_intentos_actuales   = 0
-seguir_el_juego                 = True
-lista_de_palabras               = ['queso', 'elefante', 'dinosaurio', 'juguete', 'tomate', 'huevo']
-letra_a_buscar                  = ''
-lista_de_letras_correctas       = []
-lista_de_letras_incorrectas     = []
+maximo_cantidad_de_intentos_fallidos = 5
+cantidad_de_intentos_fallidos        = 0
+seguir_el_juego                      = True
+lista_de_palabras                    = ['queso', 'elefante', 'dinosaurio', 'juguete', 'tomate', 'huevo']
+letra_a_buscar                       = ''
+lista_de_letras_correctas            = []
+lista_de_letras_incorrectas          = []
 lista_de_letras_introducidas_por_el_usuario = []
 palabra = 'dinosaurio'
 
 mostrar_espacios(palabra, lista_de_letras_correctas)
 
 #Proceso principal
-while cantidad_de_intentos_actuales < maximo_cantidad_de_intentos and seguir_el_juego:
+while cantidad_de_intentos_fallidos < maximo_cantidad_de_intentos_fallidos and seguir_el_juego:
     
     letra = pedir_letra()
     print(f"La letra que colocaste es: {letra}")
@@ -78,9 +78,10 @@ while cantidad_de_intentos_actuales < maximo_cantidad_de_intentos and seguir_el_
     else:
         print("La letra no esta en la palabra ")
         lista_de_letras_incorrectas.append(letra)
+        cantidad_de_intentos_fallidos += 1
     
     mostrar_espacios(palabra, lista_de_letras_correctas)
     # Si esta en la palabra, imprimir mensaje está
     # Si no está en la palabra, imprimir no está
     
-    cantidad_de_intentos_actuales += 1    
+        
