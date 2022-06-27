@@ -22,17 +22,29 @@
 
 
 ##Funciones
+from re import A
+
+
 def pedir_letra():
     letra = input("Adivina la letra: ")
     return letra
 
 
-def mostrar_espacios(palabra):
+def mostrar_espacios(palabra, lista_de_letras_correctas):
     """Esta funcion recibe una palabra e imprime en pantalla el caracter "_" 
-    repetido la cantidad de letras de la palabra pasada por parámetro"""
+    repetido la cantidad de letras de la palabra pasada por parámetro
+    Por cada iteracion (letra encontrada) voy agregar una barrita o un espacio a la variable incognito
+    y al final de eso voy a imprimir incognito"""
     incognito = ""
     for l in palabra:
-        incognito += "_ "
+        letra_correcta = l in lista_de_letras_correctas
+        if letra_correcta == True:
+            incognito += l
+        else:
+            incognito += "_ "
+        
+        # print(f'L= {l}')
+        # print(f'incognito= {incognito}')
     print(incognito)
 
 # Paso 7?
@@ -51,14 +63,14 @@ lista_de_letras_incorrectas     = []
 lista_de_letras_introducidas_por_el_usuario = []
 palabra = 'dinosaurio'
 
-mostrar_espacios(palabra)
+mostrar_espacios(palabra, lista_de_letras_correctas)
 
 #Proceso principal
 while cantidad_de_intentos_actuales < maximo_cantidad_de_intentos and seguir_el_juego:
     
     letra = pedir_letra()
     print(f"La letra que colocaste es: {letra}")
-    
+    guardar_letra(letra)
 
     esta_en_palabra = False
     # se usa el operador de pertenencia IN para devolver un booleano
@@ -70,7 +82,7 @@ while cantidad_de_intentos_actuales < maximo_cantidad_de_intentos and seguir_el_
         print("La letra no esta en la palabra ")
         lista_de_letras_incorrectas.append(letra)
     
-    mostrar_espacios(palabra)
+    mostrar_espacios(palabra, lista_de_letras_correctas)
     # Si esta en la palabra, imprimir mensaje está
     # Si no está en la palabra, imprimir no está
     
