@@ -21,8 +21,6 @@
 
 
 ##Funciones
-from re import A
-
 
 def pedir_letra():
     letra = input("Adivina la letra: ")
