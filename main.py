@@ -75,13 +75,17 @@ while cantidad_de_intentos_fallidos < maximo_cantidad_de_intentos_fallidos and s
     if esta_en_palabra == True:
         print("La letra esta en la palabra!")
         lista_de_letras_correctas.append(letra)
+        
     else:
         print("La letra no esta en la palabra ")
         lista_de_letras_incorrectas.append(letra)
         cantidad_de_intentos_fallidos += 1
-    
+    print("\n")
+    print(f"Letras correctas: {lista_de_letras_correctas}")
+    print(f"Letras incorrectas: {lista_de_letras_incorrectas}")
+    print("\n")
     mostrar_espacios(palabra, lista_de_letras_correctas)
     # Si esta en la palabra, imprimir mensaje está
     # Si no está en la palabra, imprimir no está
-    
+
         
