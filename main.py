@@ -17,10 +17,30 @@
 #           guardar_letra, guardar_letra_correcta y guardar_letra_incorrecta       
 #PASO 10: En cada iteracion, imprimir en pantalla las letras incorrectas.
 ##              HINT(recorrer con un ciclo la lista de letras incorrectas e imprimirlas)
+#ULTIMO PASO: Aleatoriamene se debe elegir un elemento de la lista_de_palabras y asignarle ese valor elegido a la variable palabra y palabra2
+##              HINT(usar pickle)
 
 
 
 ##Funciones
+
+from calendar import c
+from pickle import TRUE
+from re import A
+               
+
+
+#Variables
+maximo_cantidad_de_intentos_fallidos = 5
+cantidad_de_intentos_fallidos        = 0
+lista_de_palabras                    = ['queso', 'elefante', 'dinosaurio', 'juguete', 'tomate', 'huevo']
+letra_a_buscar                       = ''
+lista_de_letras_correctas            = []
+lista_de_letras_incorrectas          = []
+lista_de_letras_introducidas_por_el_usuario = []
+palabra                             = 'dinosaurio'
+palabra2                            = 'dinosaurio'
+seguir_el_juego                     = True
 
 def pedir_letra():
     """Esta funcion pide una letra al usuario y la devuelve en la variable letra"""
@@ -48,22 +68,25 @@ def mostrar_espacios(palabra, lista_de_letras_correctas):
 def guardar_letra(letra_a_guardar):
     lista_de_letras_introducidas_por_el_usuario.append(letra_a_guardar)
     
-def comprobar_fin_de_juego():
-    fin = True
+
+
+def fin_de_juego():
+    """Devuelve True si el usuario completó toda la palabra
+       Devuelve False si el usuario aún le quedan letras por adivinar
+    """
+    global seguir_el_juego
+    global palabra2
+    global lista_de_letras_correctas
+
+    palabra2 = ''.join( x for x in palabra2 if x not in lista_de_letras_correctas)
+
+    if (len(palabra2) ==0):
+        return True
+    else: 
+        return False
     
-    
-    return True
-#Variables
-maximo_cantidad_de_intentos_fallidos = 5
-cantidad_de_intentos_fallidos        = 0
-seguir_el_juego                      = True
-lista_de_palabras                    = ['queso', 'elefante', 'dinosaurio', 'juguete', 'tomate', 'huevo']
-letra_a_buscar                       = ''
-lista_de_letras_correctas            = []
-lista_de_letras_incorrectas          = []
-lista_de_letras_introducidas_por_el_usuario = []
-palabra = 'papa'
-palabra2 = 'papa'
+
+
 mostrar_espacios(palabra, lista_de_letras_correctas)
 
 #Proceso principal
@@ -89,10 +112,8 @@ while cantidad_de_intentos_fallidos < maximo_cantidad_de_intentos_fallidos and s
     print(f"Letras incorrectas: {lista_de_letras_incorrectas}")
     print("\n")
     mostrar_espacios(palabra, lista_de_letras_correctas)
-    if comprobar_fin_de_juego():
-        seguir_el_juego = True
-    else:
+
+    if fin_de_juego():
         seguir_el_juego = False
-    # Si esta en la palabra, imprimir mensaje está
-    # Si no está en la palabra, imprimir no está
+
     
