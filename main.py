@@ -23,6 +23,7 @@
 ##Funciones
 
 def pedir_letra():
+    """Esta funcion pide una letra al usuario y la devuelve en la variable letra"""
     letra = input("Adivina la letra: ")
     return letra
 
@@ -44,11 +45,14 @@ def mostrar_espacios(palabra, lista_de_letras_correctas):
         # print(f'incognito= {incognito}')
     print(incognito)
 
-# Paso 7?
 def guardar_letra(letra_a_guardar):
     lista_de_letras_introducidas_por_el_usuario.append(letra_a_guardar)
     
-
+def comprobar_fin_de_juego():
+    fin = True
+    
+    
+    return True
 #Variables
 maximo_cantidad_de_intentos_fallidos = 5
 cantidad_de_intentos_fallidos        = 0
@@ -58,8 +62,8 @@ letra_a_buscar                       = ''
 lista_de_letras_correctas            = []
 lista_de_letras_incorrectas          = []
 lista_de_letras_introducidas_por_el_usuario = []
-palabra = 'dinosaurio'
-
+palabra = 'papa'
+palabra2 = 'papa'
 mostrar_espacios(palabra, lista_de_letras_correctas)
 
 #Proceso principal
@@ -85,7 +89,10 @@ while cantidad_de_intentos_fallidos < maximo_cantidad_de_intentos_fallidos and s
     print(f"Letras incorrectas: {lista_de_letras_incorrectas}")
     print("\n")
     mostrar_espacios(palabra, lista_de_letras_correctas)
+    if comprobar_fin_de_juego():
+        seguir_el_juego = True
+    else:
+        seguir_el_juego = False
     # Si esta en la palabra, imprimir mensaje está
     # Si no está en la palabra, imprimir no está
-
-        
+    
